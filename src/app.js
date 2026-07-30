@@ -17,6 +17,10 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date() });
 });
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Welcome to AXRWeb Backend API', health: '/health' });
+});
+
 // API Routes
 app.use('/api/users', userRoutes);
 app.use('/api/listings', listingRoutes);
